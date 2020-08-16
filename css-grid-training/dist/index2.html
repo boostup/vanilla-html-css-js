@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        /* text adapts to screen width */
+        font-size: 15vw;
+        /* but when screen width is too small, text might become too small, so here is how to fix that*/
+        font-size: calc(18px + 15vw);
+      }
+      p {
+        font-size: calc(14px + 2vw);
+      }
+
+      article {
+        height: 50vw; /* avoid losing aspect ratio on boxes or images */
+        width: 100vw;
+        background: #aaa;
+        display: flex;
+        flex-wrap: wrap; /* so the divs it contains do not overflow to the right of the article element boudary */
+        max-height: 500px;
+      }
+
+      article div {
+        flex: 1; /* div now takes as much width as possible */
+        height: 20vw;
+        min-width: 400px;
+        border: 5px solid white;
+        background: #222;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </article>
+    <h1>Hello World</h1>
+    <a href="https://www.youtube.com/watch?v=-TTBCxEBbfQ"
+      >Responsive Web Design Without Media Queries
+    </a>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      repudiandae sint quos doloremque laborum suscipit necessitatibus sed
+      laudantium commodi sit!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      repudiandae sint quos doloremque laborum suscipit necessitatibus sed
+      laudantium commodi sit!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      repudiandae sint quos doloremque laborum suscipit necessitatibus sed
+      laudantium commodi sit!
+    </p>
+  </body>
+</html>

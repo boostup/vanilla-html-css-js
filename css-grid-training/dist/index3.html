@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Named Areas</title>
+    <style>
+      .grid-container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1.5fr;
+        grid-template-rows: 1fr 4fr 3fr 2fr;
+        grid-template-areas:
+          "main     main    header"
+          "main     main    candy"
+          "nom      yum     candy"
+          "footer   footer  candy";
+      }
+
+      main {
+        grid-area: main;
+        background: #a8beee;
+      }
+      section.yum {
+        grid-area: yum;
+        background: #eaf1c1;
+      }
+      section.nom {
+        grid-area: nom;
+        background: #b3dba1;
+      }
+      .candy {
+        grid-area: candy;
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/candy.jpg")
+          no-repeat;
+        background-size: cover;
+      }
+      section.footer {
+        grid-area: footer;
+      }
+      header {
+        grid-area: header;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <main>main</main>
+      <section class="nom">nom</section>
+      <section class="yum">yum</section>
+      <section class="footer">footer</section>
+      <header>header</header>
+      <div class="candy"></div>
+    </div>
+    <p>
+      <a
+        href="https://www.youtube.com/watch?v=YNB-JD7iPoQ&list=PLe4LZLlTJV8nBDJfh7WG3pNkuu5mUbUWp&index=9&t=0s"
+        >STOP The CSS Grid Confusion - 2 Ways to GRID!
+      </a>
+    </p>
+  </body>
+</html>

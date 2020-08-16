@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID : Auto-Fill vs. Auto-Fit</title>
+    <style>
+      section {
+        padding: 10px;
+      }
+      .basic-grid {
+        display: grid;
+        gap: 1rem;
+
+        /* 1 cols too skinny, too much code */
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        /* 2 cleaner code */
+        grid-template-columns: repeat(12, 1fr);
+
+        /* 3 better col sizing, but 12 cols do overflow */
+        grid-template-columns: repeat(12, minmax(240px, 1fr));
+      }
+      .basic-grid.auto-fit {
+        /* 4 final : clean code, no overflow thanks to dynamic cols count */
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .basic-grid.auto-fill {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #353535;
+        font-size: 3rem;
+        color: #ffffff;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>auto-fit</h1>
+    <section class="basic-grid auto-fit">
+      <div class="card">1</div>
+      <div class="card">2</div>
+      <div class="card">3</div>
+      <!-- <div class="card">4</div>
+      <div class="card">5</div>
+      <div class="card">6</div>
+      <div class="card">7</div>
+      <div class="card">8</div>
+      <div class="card">9</div>
+      <div class="card">10</div>
+      <div class="card">11</div>
+      <div class="card">12</div> -->
+    </section>
+    <section></section>
+    <h1>auto-fill</h1>
+    <section class="basic-grid auto-fill">
+      <div class="card">1</div>
+      <div class="card">2</div>
+      <div class="card">3</div>
+      <!-- <div class="card">4</div>
+      <div class="card">5</div>
+      <div class="card">6</div>
+      <div class="card">7</div>
+      <div class="card">8</div>
+      <div class="card">9</div>
+      <div class="card">10</div>
+      <div class="card">11</div>
+      <div class="card">12</div> -->
+    </section>
+
+    <p>
+      <a
+        href="https://www.youtube.com/watch?v=705XCEruZFs&list=PLe4LZLlTJV8nBDJfh7WG3pNkuu5mUbUWp&index=10&t=0s"
+        >The Joy of CSS Grid - Build 3 Beautifully Simple Responsive Layouts
+      </a>
+    </p>
+  </body>
+</html>

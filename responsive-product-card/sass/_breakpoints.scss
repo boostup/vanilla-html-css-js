@@ -1,0 +1,51 @@
+@import "mixins/info";
+
+@mixin breakpoints {
+  // $orange: #ff9b54;
+  // $purple: #c99dc2;
+  // $blue: #a3c3d9;
+  // $lOrange: #f8bd7f;
+  // $gray: #efefef;
+  $orange: white;
+  $purple: white;
+  $blue: white;
+  $lOrange: white;
+  $gray: white;
+
+  @include media("<=phone") {
+    background: $orange;
+    &::after {
+      @include info($msg: "Phone Viewport");
+    }
+  }
+
+  @include media(">phone", "<tablet") {
+    background: $purple;
+    &::after {
+      @include info(
+        $msg:
+          "Medium & large Phone viewports, but smaller than Tablet viewports"
+      );
+    }
+  }
+
+  @include media(">=tablet", "<desktop") {
+    background: $blue;
+    &::after {
+      @include info(
+        $msg:
+          "Medium Tablet viewports or greater, but smaller than Desktop viewports"
+      );
+    }
+  }
+  @include media(">=desktop") {
+    background: $lOrange;
+    &::after {
+      @include info($msg: "Large Tablet & Desktop viewports");
+    }
+  }
+
+  @include media(">=tablet", "landscape") {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
