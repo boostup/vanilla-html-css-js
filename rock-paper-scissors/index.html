@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id="gameArea">
+
+          <div id="modalOverlay" style="display:none;" class="slideable hidden">
+            <div id="modal">
+              <div class=titleBar>
+                <p class="title"></p>
+                <i class="icon fa fa-exclamation-circle"></i>
+              </div>
+              <p class="msg"></p>
+              <button>restart</button>
+
+            </div>
+          </div>
+
+          <!-- TITLE -->
+          <div id="gameTitle" class="fadeable hidden">Pick a card !</div>
+
+          <!-- BUTTON FOR CPU Vs CPU -->
+          <button id="automaticPlayBtn" class="fadeable hidden">Play CPU vs CPU</button>
+
+            <!-- placeholders for selected cards -->
+            <div id="placeholders">
+                <div id="placeholder1" class="card">
+                  <div class="edge outer">
+                    <div class="edge inner">
+                      <!-- i class="icon fa fa-hand-rock-o fa-5"></i -->
+                      <span class="name">YOU</span>
+                      <span class="playerLabel">Player 1</span>
+                    </div>
+                  </div>
+                </div>  
+
+                <div class="card">
+                  <div class="edge outer">
+                    <div class="edge inner" style="background: grey;">
+                      <!-- i class="icon fa fa-hand-rock-o fa-5"></i -->
+                      <span class="name">CPU</span>
+                      <span class="playerLabel">Player 2</span>
+                    </div>
+                  </div>
+                </div>                
+            </div>
+
+          <!-- BOARD -->
+          <!-- display:none here is purposely inline ;) this is to get the free movement of the deck going down when board appears.  It's a quick win! -->
+          <div id="board" style="display:none;" class="fadeable hidden">
+            <!-- USER CARD WILL BE PLACE HERE -->
+            <div id="versus">VS</div>
+            <!-- CPU CARD WILL BE PLACE HERE -->
+          </div>
+
+          <!-- DECK -->
+          <div id="deck">
+
+            <!-- ROCK -->
+            <div id="rockCard" data-card-type="rock" class="displayMeAtStart card hidden">
+              <div class="edge outer">
+                <div class="edge inner">
+                  <!-- i class="icon fa fa-hand-rock-o fa-5"></i -->
+                  <span class="name">Rock</span>
+                </div>
+              </div>
+            </div>
+            <!-- PAPER -->
+            <div id="paperCard" data-card-type="paper" class="displayMeAtStart card hidden">
+              <div class="edge outer">
+                <div class="edge inner">
+                  <!-- i class="icon fa fa-hand-paper-o"></i -->
+                  <span class="name">Paper</span>
+                </div>
+              </div>
+            </div>
+            <!-- SCISSORS -->
+            <div id="scissorsCard" data-card-type="scissors" class="displayMeAtStart card hidden">
+              <div class="edge outer">
+                <div class="edge inner">
+                  <!-- i class="icon fa fa-hand-scissors-o" aria-hidden="true"></i -->
+                  <span class="name">Scissors</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>     
+          
+        <script src="js/FHBNamespace.js"></script>
+        <script src="js/errorHandling.js"></script>
+        <script src="js/helpers.js"></script>
+        <script src="js/RockPaperScissors.js"></script>
+        <script src="js/Application.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+/*--------------------------------------------------*/
+  /* NOTES */
+/*--------------------------------------------------*/
+/* 
+As a CSS preprocessor, I normally use SCSS.  However, this exercise is without any Frameworks of any sort... 
+For the CSS part, you could tell me I could've, but here you go... 
+*/
+
+/*
+@import url(http://fonts.googleapis.com/css?family=Belleza);
+
+- Commenting this out since fonts will not be downloaded if this app does not run on web server.
+
+*/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Belleza', sans-serif;
+  color: #222729;
+  font-size: 11px;
+  height: 100%;
+  line-height: normal;
+}
+
+#gameArea {
+  position: relative;
+}
+
+#modalOverlay {
+  position: absolute;
+  z-index:10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; 
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#modal {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  height: auto;
+  min-height: 50px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.6);  
+  border-radius: 5px;
+}
+
+#modal * {
+  color: #ECBF65;
+}
+
+#modal .titleBar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;    
+}
+
+#modal .titleBar * {
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+
+#modal .msg {
+  font-size: 1.3em;
+  color: white;
+}
+
+#gameArea button {
+  border-radius: 4px;
+  font-size: 1.3em;
+  color: black;
+  background: #ECBF65;
+  cursor: pointer;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#modalOverlay.slideable,
+.card.slideable {
+  transition: all 300ms ease-in-out;
+}
+
+.fadeable {
+  transition: opacity 500ms linear;
+}
+
+#gameTitle, 
+#versus {
+  font-size: 4em;
+  margin: 0.2em;
+}
+
+#versus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+#deck {
+  background: lightgrey;
+  height: 15em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#deck .card {
+  cursor: pointer
+}
+
+.card {  
+  margin: 1.2em;
+  width: 90px;
+}
+
+.card .edge {
+  height: 100%;
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 8px 7px 7px 8px;
+}
+
+.card .outer .inner {
+  background: #ECBF65;
+  height: 10em;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .inner .icon,
+.card .inner .name
+ {
+  font-size: 1.4em;
+  transform: rotate(-24deg);
+}
+
+#placeholders .card .edge.outer {
+  border: none;
+}
+
+#placeholders .card .playerLabel {
+  color: #443F3F;
+  position: relative;
+  top: 1em;
+}
+
+#placeholders,
+#board {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#board .card {
+  position:relative;
+  top:-25px;
+}
